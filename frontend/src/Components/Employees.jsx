@@ -70,7 +70,7 @@ const columns = [
       field: "actions",
       headerName: "Actions",
       headerAlign: "center",
-      flex: 2, // Using flex here
+      flex: 2, 
       renderCell: (params) => (
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
           <IconButton onClick={() => navigate(`/view/${params.row.id}`)}>
