@@ -18,7 +18,7 @@ import {
   Typography,
   Stack,
   Grid,
-Box
+  Box,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -55,25 +55,24 @@ const EmployeeTable = () => {
     setOpenDeleteDialog(false);
   };
 const columns = [
-    { field: "id", headerName: "S.No", width: 90 },
-    { field: "firstName", headerName: "First Name", width: 150 },
-    { field: "lastName", headerName: "Last Name", width: 150 },
-    { field: "age", headerName: "Age", width: 90 },
-    { field: "position", headerName: "Position", width: 150 },
-    { field: "department", headerName: "Department", width: 150 },
-    { field: "contact", headerName: "Contact", width: 150 },
-    { field: "email", headerName: "Email", width: 200 },
-    { field: "city", headerName: "City", width: 150 },
-    { field: "state", headerName: "State", width: 120 },
-    { field: "zip", headerName: "Zip", width: 120 },
+    { field: "id", headerName: "S.No", flex: 1 },
+    { field: "firstName", headerName: "First Name", flex: 2 },
+    { field: "lastName", headerName: "Last Name", flex: 2 },
+    { field: "age", headerName: "Age", flex: 1 },
+    { field: "position", headerName: "Position", flex: 2 },
+    { field: "department", headerName: "Department", flex: 2 },
+    { field: "contact", headerName: "Contact", flex: 2 },
+    { field: "email", headerName: "Email", flex: 3 },
+    { field: "city", headerName: "City", flex: 2 },
+    { field: "state", headerName: "State", flex: 1.5 },
+    { field: "zip", headerName: "Zip", flex: 1.5 },
     {
       field: "actions",
       headerName: "Actions",
       headerAlign: "center",
-
-      width: 180,
+      flex: 2, // Using flex here
       renderCell: (params) => (
-        <div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
           <IconButton onClick={() => navigate(`/view/${params.row.id}`)}>
             <VisibilityIcon />
           </IconButton>
